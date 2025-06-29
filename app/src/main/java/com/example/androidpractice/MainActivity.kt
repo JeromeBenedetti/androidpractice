@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,7 +37,8 @@ class MainActivity : ComponentActivity() {
                     GreetingImage(
                         message = "Happy Birthday Sam!",
                         from = "From Emma",
-                        modifier = Modifier.padding(8.dp),
+                        modifier = Modifier
+                            .padding(8.dp),
                     )
                 }
             }
@@ -83,6 +85,8 @@ fun GreetingImage(
         Image(
             painter = image,
             contentDescription = null,
+            contentScale = ContentScale.Crop,
+            alpha = 0.5F
         )
         GreetingText(
             message,
